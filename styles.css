@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    background: var(--blue) ;
+    font-size: 10px;
+    box-sizing: border-box;
+    color: var(--white);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --red: hsl(356, 68%, 59%);
+    --blue: hsl(219, 85%, 8%);
+    
+}.btn {
+    color: var(--black);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Header */
+
+header {
+    background: var(--white);
+    text-align: center;
+}
+
+#main {
+    font-size: 3.5rem;
+    color: var(--blue);
+    margin: 0;
+    padding: 0.5em;
+}
+
+
+/* scoreboard */
+
+#scoreBoard {
+    font-size: 4.5rem;        
+    border: var(--white) solid 2px;
+    border-radius: 7px;
+    padding: 1em 1.5em;
+    margin-top: 0.5em;
+    position: relative;
+}
+
+.label {
+    font-size: 0.5em;
+    display: inline-block;
+    background: var(--red);
+    padding: 0.1em 0.4em;
+}
+
+#user-label {
+    position: absolute;
+    left: -30px;
+    top: 57px;
+}
+#comp-label {
+    position: absolute;
+    right: -37px;
+    top: 57px;
+}
+
+
+#score {
+    display: inline-block;
+}
+
+/* Below scoreboard */
+
+h1 {
+    padding: 2rem;
+    font-size: clamp(3rem, 30vw, 5rem);
+}

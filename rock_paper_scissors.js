@@ -25,6 +25,8 @@ let things = {
                 things.computerScore += 1;
                 return outcome = `You lose this round, ${computerSelection} beats ${playerSelection}!`;
         }
+
+    
     },
     totalScore: 0
 
