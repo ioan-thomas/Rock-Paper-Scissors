@@ -10,7 +10,7 @@ html {
     --white: hsl(0, 0%, 100%);
     --black: hsl(0, 0%, 0%);
     --red: hsl(356, 68%, 59%);
-    --blue: hsl(219, 85%, 8%);
+    --blue: #030f26;
     
 }.btn {
     color: var(--black);
@@ -66,14 +66,56 @@ header {
     top: 57px;
 }
 
-
-#score {
-    display: inline-block;
-}
-
 /* Below scoreboard */
 
+.heading {
+    padding: 3rem;
+}
+
 h1 {
-    padding: 2rem;
-    font-size: clamp(3rem, 30vw, 5rem);
+    font-size: clamp(3rem, 90%, 5rem);
+}
+
+.btn-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background: #051739;
+}
+
+.hvr-icon-grow-rotate {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.hvr-icon-grow-rotate .hvr-icon {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.hvr-icon-grow-rotate:hover .hvr-icon, .hvr-icon-grow-rotate:focus .hvr-icon, .hvr-icon-grow-rotate:active .hvr-icon {
+    -webkit-transform: scale(1.1) rotate(12deg);
+    transform: scale(1.1) rotate(12deg);
+}
+
+.btn {
+    border: solid var(--white) 0.2rem;
+    border-radius: 50%;
+    padding: 1rem;
+    transform: rotate(90deg) scaleX(-1);
 }
