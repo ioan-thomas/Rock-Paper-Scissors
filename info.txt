@@ -1,0 +1,1 @@
+The design is based on a video via Freecodecamp.org. I have been using an image of the design as a referene and writing my code to match it. I am not matching it exact, I am using some exploring some altenative design solutions.
