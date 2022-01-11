@@ -1,67 +1,72 @@
-let things = {
-    humanScore: 0,
-    computerScore: 0,
+let humanScore = 0;
+let computerScore = 0;
+let playerSelected;
+let computerSelection = undefined;
+const overallOutcome = document.querySelector('h3');
+const outcome = document.querySelector('#display-outcome');
+const score = document.querySelector('#score');
+score.textContent = `${humanScore} : ${computerScore}`;
 
-    computerPlay(){
-        let choices = ['rock', 'paper', 'scissors'];
-        return choices[Math.floor(Math.random() * choices.length)];
-    },
-
-    playRound(computerSelection, playerSelection){
-        let outcome;
-        switch (computerSelection + playerSelection) {
-            case 'rockrock':
-            case 'paperpaper':
-            case 'scissorsscissors':
-                return outcome = `You chose ${playerSelection} and the computer chose ${computerSelection}. It's a DRAW!`;
-            case 'rockpaper':
-            case 'paperscissors':
-            case 'scissorsrock':
-                things.humanScore += 1;
-                return outcome = `You win this round, ${playerSelection} beats ${computerSelection}!`;
-            case 'paperrock':
-            case 'scissorspaper':
-            case 'rockscissors':
-                things.computerScore += 1;
-                return outcome = `You lose this round, ${computerSelection} beats ${playerSelection}!`;
-        }
-
-    
-    },
-    totalScore: 0
-
+const computerPlay = () => {
+    let choices = ['Rock', 'Paper', 'Scissors'];
+    computerSelection = choices[Math.floor(Math.random() * choices.length)];
 };
 
-const game = () => {
 
-    for(i = 0; i < 5; i++) {
-        console.log(i);
-        console.log(`Your score: ${things.humanScore}`);
-        console.log(`The computer score: ${things.computerScore}`);
+const playRound = () => {
+    console.log(`Computer = ${computerSelection} and User = ${playerSelected}.`);
 
-        let computerSelection = things.computerPlay();
-        let playerSelection = prompt('What is your play?');
+    switch (computerSelection + playerSelected) {
+        case 'RockRock':
+        case 'PaperPaper':
+        case 'ScissorsScissors':
+            outcome.textContent = `It's a DRAW! You both chose ${playerSelected.toLowerCase()}.`;
+            return;
 
-        playerSelection = playerSelection.toLowerCase();
-
-        console.log(things.playRound(computerSelection, playerSelection));
+        case 'RockPaper':
+        case 'PaperScissors':
+        case 'ScissorsRock':
+            score.textContent = `${humanScore += 1} : ${computerScore}`;
+            outcome.textContent = `You WIN! ${playerSelected} beats ${computerSelection.toLowerCase()}.`;
+            return;
+        case 'PaperRock':
+        case 'ScissorsPaper':
+        case 'RockScissors':
+            score.textContent = `${humanScore} : ${computerScore += 1}`;
+            outcome.textContent = `You LOSE! ${computerSelection} beats ${playerSelected.toLowerCase()}.`;
+            return;
     }
+};
+ 
+const game = () => {
+    // let computerSelection = computerPlay();
+    computerPlay();
+    playRound();
 
-    console.log(`Your final score: ${things.humanScore}`);
-        console.log(`The final computer score: ${things.computerScore}`);
+    if (humanScore === 5){
+        console.log(`Win. User score is ${humanScore} and computer score is ${computerScore}`)
+        overallOutcome.textContent = 'CONGRATULATIONS! You WIN!';
+        return;
+    } else if(computerScore === 5){
+        console.log(`Lost. User score is ${humanScore} and computer score is ${computerScore}`)
+        overallOutcome.textContent = 'You LOSE! Try again.';
+        return;
+    } else if(humanScore === 5 && computerScore === 5){
+        console.log(`User score is ${humanScore} and computer score is ${computerScore}`)
+        overallOutcome.textContent = "It's a DRAW! Play again?";
+        return;
+    };
+};  
 
+    // creates node list of all elements with class of btn - cannot add event listeners to node list - need to add them individually.
+const playerSelection = document.querySelectorAll('img');
+playerSelection.forEach(image => 
+    { image.addEventListener('click', e => {
+        playerSelected = e.target.id;
+        game();
+        });
+    }
+);
+    
+    
 
-        if (things.humanScore > things.computerScore){
-            console.log('CONGRATULATIONS! You WIN!');
-            return;
-        } else if(things.humanScore < things.computerScore){
-            console.log('You LOSE! Try again.');
-            return;
-        } else if(things.humanScore == things.computerScore){
-            console.log("It's a DRAW! Play again?");
-            return;
-        };
-    }   
-
-
-console.log(game());

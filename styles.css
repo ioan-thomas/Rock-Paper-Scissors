@@ -74,6 +74,7 @@ header {
 
 h1 {
     font-size: clamp(3rem, 90%, 5rem);
+    text-align: center;
 }
 
 .btn-container {

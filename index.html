@@ -15,19 +15,19 @@
     <div class="container">
         <div id="scoreBoard">
             <p class="label" id="user-label">user</p>
-            <p id="score">0:0</p>
+            <p id="score"></p>
             <p class="label" id="comp-label">comp</p>
         </div>
-        <h1 class="heading">Paper covers rock. You win!</h1>
+
+        <h1 class="heading" id="display-outcome">Choose your weapon wisely.</h1>
+        
         <div class="btn-container">
-            
-            <div class="btn hvr-icon-grow-rotate"><img src="/img/Rock.png" class="hvr-icon" alt="Rock"></div>
-
-            <div class="btn hvr-icon-grow-rotate"><img src="/img/Paper.png" class="hvr-icon" alt="Paper"></div>
-
-            <div class="btn hvr-icon-grow-rotate"><img src="/img/Scissors.png" class="hvr-icon" alt="Scissors"></div>
+            <div class="btn hvr-icon-grow-rotate"><img src="/img/Rock.png" id="Rock" class="hvr-icon" alt="rock"></div>
+            <div class="btn hvr-icon-grow-rotate"><img src="/img/Paper.png" id="Paper" class="hvr-icon" alt="paper"></div>
+            <div class="btn hvr-icon-grow-rotate"><img src="/img/Scissors.png" id="Scissors" class="hvr-icon" alt="scissors"></div>
         </div>
-        <h3 class="heading">Make your move.</h3>
+
+        <h3 class="heading">Who will win?</h3>
     </div>
     
     <script src="/rock_paper_scissors.js"></script>
