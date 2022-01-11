@@ -51,7 +51,7 @@ const game = () => {
         console.log(`Lost. User score is ${humanScore} and computer score is ${computerScore}`)
         overallOutcome.textContent = 'You LOSE! Try again.';
         return;
-    } else if(humanScore === 5 && computerScore === 5){
+    } else if(humanScore === 5 && computerScore ===5){
         console.log(`User score is ${humanScore} and computer score is ${computerScore}`)
         overallOutcome.textContent = "It's a DRAW! Play again?";
         return;
